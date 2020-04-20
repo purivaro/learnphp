@@ -11,8 +11,8 @@
 		<h1 style="background: yellow;">บทสวดมนต์ก่อนนอน บทแผ่เมตตา อานิสงส์ของการสวดมนต์</h1><h1 style="background:cyan;">อยู่ต่อได้ไหม</h1>
 		<hr>
 		<img src="img/photo/chanting.jpg" width="500">
-		<img src="/learnphp/img/photo/chanting.jpg" width="500">
-		<img src="/learnphp/img/contact.png">
+		<img src="/learnphp/02_html/img/photo/chanting.jpg" width="500">
+		<img src="/learnphp/02_html/img/contact.png">
 		<!-- <h2>อันนี้คือ h2</h2> -->
 		<p>
 			บทสวดมนต์ก่อนนอน นับเป็นวิธีหนึ่ง<br>
@@ -22,7 +22,7 @@
 			เมื่อกลับถึงบ้านเราต่างก็ต้องการเวลาพักผ่อน อยากนอนหลับสบายเพื่อลืมเรื่องราวแย่ๆ
 		</p>
 		<a href="page/contact.php">ไปหน้าcontact1</a>
-		<a href="/learnphp/page/contact.php">ไปหน้าcontact2</a>
+		<a href="/learnphp/02_html/page/contact.php">ไปหน้าcontact2</a>
 	</section>
 	<section>
 		<h3>อานิสงส์จากการสวดมนต์</h3>
