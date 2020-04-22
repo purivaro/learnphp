@@ -17,6 +17,11 @@ h3 {
 	font-size: 30px;
 }
 
+#benefits h3:hover {
+	color: rgb(207, 54, 19);
+	font-size: 50px;
+}
+
 #benefits p {
 	line-height: 40px;
 }
@@ -25,6 +30,7 @@ h3 {
 	font-weight: 900;
 	text-align: center;
 }
+
 
 #summary h2 {
 	font-size: 60px;

@@ -1,0 +1,36 @@
+.bg-blue {
+	background: rgb(171, 231, 242);
+}
+
+.bg-green {
+	background: rgb(199, 250, 194);
+}
+
+.box {
+	font-size: 30px;
+	width: 500px;
+	height: 300px;
+	overflow: auto;
+	opacity: 1;
+}
+
+#b1 {
+	margin: 50px 100px;
+	padding: 100px;
+	border: 5px solid rgb(15, 126, 145);
+	border-radius: 30px;
+	box-shadow: 6px 3px 20px 5px rgb(167, 167, 167);
+	font-family: 'Sriracha', cursive;
+}
+
+#b2 {
+	margin: 100px 20px 30px;
+	padding: 30px 80px 200px 300px;
+	border: 10px dotted rgb(24, 103, 14);
+	font-family: 'K2D', sans-serif;
+}
+
+.big-font {
+	font-size: 120px;
+	text-align: center;
+}

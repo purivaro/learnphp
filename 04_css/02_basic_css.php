@@ -39,10 +39,10 @@
 <body>
 	<section id="meditation">
 
-		<h1 style="font-size: 45px; color: #0083a1; font-family: 'Mali', cursive;">10 ประโยชน์จากการทำสมาธิ ..เปลี่ยนคุณภาพชีวิตคุณให้ดีขึ้นทันตา</h1>
+		<h1 style="font-size: 45px; color: #0083a1; font-family: 'Mali', cursive; text-align: center;">10 ประโยชน์จากการทำสมาธิ ..เปลี่ยนคุณภาพชีวิตคุณให้ดีขึ้นทันตา</h1>
 
-		<div>
-			<img src="img/med2.jpg" id="topic-cover">
+		<div style="text-align: center;">
+			<img src="img/med2.jpg" id="topic-cover"  >
 		</div>
 
 		<h3>อยากรู้กันไหม?</h3>
