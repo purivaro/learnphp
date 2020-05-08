@@ -1,0 +1,125 @@
+body {
+	margin: 0;
+}
+
+.container {
+	background: rgb(244, 212, 247);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	display: flex;
+	height: 600px;
+	/* flex-direction: row;
+	flex-wrap: wrap; */
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	/* align-content: stretch; */
+}
+
+.item {
+	background: rgb(222, 153, 50);
+	font-size: 40px;
+	padding: 30px;
+	margin: 5px;
+	flex: 1;
+}
+
+#i3 {
+	align-self: stretch;
+}
+
+#i1 {
+	order: 1;
+}
+
+#i4 {
+	order: 2;
+	flex: 2;
+}
+
+#i3 {
+	order: 0;
+	flex: 3 1;
+}
+
+#i2 {
+	order: 4;
+}
+
+.menu-container {
+	display: flex;
+	height: 50px;
+	background: rgb(62, 113, 222);
+	justify-content: center;
+}
+
+.menu-container>a {
+	padding: 10px;
+	margin: 0 5px;
+	background: rgb(62, 113, 222);
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+}
+
+.menu-container>a:hover {
+	background: rgb(80, 130, 237);
+}
+
+.login-container {
+	background: rgb(233, 233, 233);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-box {
+	background: rgb(147, 188, 238);
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 24px;
+}
+
+.login-box input {
+	width: 100%;
+	font-size: 24px;
+}
+
+.login-box .form-row {
+	margin: 10px 0;
+}
+
+.login-box button {
+	font-size: 30px;
+	padding: 10px;
+	background: rgb(139, 169, 233);
+}
+
+.news-container {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+.news-container img {
+	width: 100%;
+}
+
+.news-column {
+	margin: 0 10px;
+	flex: 1;
+}
+
+#news2 {
+	flex: 3;
+}
+
+@media all and (max-width: 700px) {
+
+	.news-container {
+		flex-direction: column;
+	}
+
+}
