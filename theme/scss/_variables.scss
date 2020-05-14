@@ -1,0 +1,82 @@
+
+// สีพื้นหลัง
+$body-bg: rgb(244, 244, 234);
+
+// สีหลัก bg-ชื่อสี , text-ชื่อสี
+$theme-colors: (
+  "primary": #f15247,
+  "info": #1d5d98,
+	"success": #7e934d,
+  "warning": #fb8315,
+  "danger": #f44336,
+  "default": #999999,
+  "l": #F4F6F6,
+  "la": #F2E627,
+  "main": #F15247,
+  "da": #88B0BC,
+  "d": #1D5D98,
+);
+
+// เพิ่มขนาดการเว้นระยะ margin / padding
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 5),
+    7: ($spacer * 7),
+    8: ($spacer * 9),
+    10: ($spacer * 12),
+    11: ($spacer * 15),
+    12: ($spacer * 18),
+  ),
+  $spacers
+);
+
+// fs-ขนาดฟอนต์ ตั้งแต่ 10px จนถึง 120px
+@for $size from 10 through 120 {
+  .fs-#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+// เอา font ไทย ใน google มาใส่
+@import 'https://fonts.googleapis.com/css?family=Charm|K2D|Sarabun|Kanit|Mali|Prompt|Sriracha|Itim&display=swap';
+
+.font-sarabun {
+	font-family: 'Sarabun', sans-serif;
+}
+
+.font-sriracha {
+	font-family: 'Sriracha', cursive;
+}
+
+.font-charm {
+	font-family: 'Charm', cursive;
+}
+
+.font-k2d {
+	font-family: 'K2D', sans-serif;
+}
+
+.font-kanit {
+	font-family: 'Kanit', sans-serif;
+}
+
+.font-mali {
+	font-family: 'Mali', sans-serif;
+}
+
+.font-prompt {
+	font-family: 'Prompt', sans-serif;
+}
+
+.font-itim {
+	font-family: 'Itim', cursive;
+}
+
