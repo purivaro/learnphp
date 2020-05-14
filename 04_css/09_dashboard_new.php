@@ -8,7 +8,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-	<section class="bg-light min-vh-100">
+	<section class="bg-light min-vh-100 font-itim">
 		<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
 			<a class="navbar-brand" href="#">Puri</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
 											<img src="img/myavatar.png" class="w-100 rounded-circle">
 										</div>
 										<div class="col-sm">
-											<h3 class="my-4">Phra Anavach Purivaro</h3>
+											<h3 class="my-4 fs-50 font-mali">Phra Anavach Purivaro</h3>
 											<p>Buddhist monk</p>
 											<p>International Buddhist Society (IBS)</p>
 											<p>Meditate Against Covid-19 Project</p>

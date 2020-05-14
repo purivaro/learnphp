@@ -1,20 +1,20 @@
-
 // สีพื้นหลัง
 $body-bg: rgb(244, 244, 234);
 
+
 // สีหลัก bg-ชื่อสี , text-ชื่อสี
 $theme-colors: (
-  "primary": #f15247,
-  "info": #1d5d98,
-	"success": #7e934d,
-  "warning": #fb8315,
+  "primary": #554053,
+  "info": #2d1a2d,
+	"success": #4f8e51,
+  "warning": #cc7e19,
   "danger": #f44336,
   "default": #999999,
-  "l": #F4F6F6,
-  "la": #F2E627,
-  "main": #F15247,
-  "da": #88B0BC,
-  "d": #1D5D98,
+  "l": #F0EAE3,
+  "la": #B86775,
+  "main": #554053,
+  "da": #5B4F47,
+  "d": #2D1A2D,
 );
 
 // เพิ่มขนาดการเว้นระยะ margin / padding
