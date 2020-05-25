@@ -22,9 +22,14 @@
 					</select>
 					<label>เดือน</label>
 					<select name="month">
-						<option value="1">มกราคม</option>
-						<option value="2">กุมภาพันธ์</option>
-						<option value="3">มีนาคม</option>
+						<?php
+							$months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+							$n = 0;
+							foreach($months as $key=>$month) {
+								$n++;
+								echo "<option value='{$n}'>{$month}</option>";
+							}
+						?>
 					</select>
 					<label>ปี</label> 
 					<select name="year">
@@ -35,6 +40,20 @@
 						?>
 					</select>
 				</div>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col">
+				<?php
+					$members = [ 
+						[ "name"=>"วิชชี่",  "food"=>"ไก่ทอด", "color"=>"danger"],  
+						[ "name"=>"กาน",  "food"=>"พิซซ่า", "color"=>"warning"],  
+						[ "name"=>"แป้ง",  "food"=>"ขนม", "color"=>"success"]
+					];		
+					foreach($members as $key=>$member) {
+						echo "<h1 class='text-{$member['color']}'>{$member['name']} ชอบกิน {$member['food']}</h1>";
+					}			
+				?>
 			</div>
 		</div>
 	</div>

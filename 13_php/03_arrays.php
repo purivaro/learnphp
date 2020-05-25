@@ -32,9 +32,9 @@
 							echo "<h3 class='mb-4'>ความเอาใจใส่ในงานที่ทำ คือ {$success[2][0]}</h3>";
 
 							$members = [ 
-								[ "name"=>"วิชชี่",  "food"=>"ข้าวมันไก่",  "pet"=>"ไก่"],
-								[ "name"=>"กาน",  "food"=>"พิซซ่า",  "pet"=>"แมว"],
-								[ "name"=>"แป้ง",  "food"=>"ขนม",  "pet"=>"นก"]
+								["name"=>"วิชชี่", "food"=>"ข้าวมันไก่", "pet"=>"ไก่"],
+								["name"=>"กาน", "food"=>"พิซซ่า", "pet"=>"แมว"],
+								["name"=>"แป้ง", "food"=>"ขนม", "pet"=>"นก"]
 							];
 
 							echo "<h3 class='mb-4'>{$members[0]['name']} ผู้รัก{$members[0]['pet']} อยากกิน{$members[0]['food']}</h3>";
@@ -48,8 +48,6 @@
 							for($i=0; $i<=2; $i++) {
 								echo "<h3 class='mb-4'>{$members[$i]['name']} ผู้รัก{$members[$i]['pet']} อยากกิน{$members[$i]['food']}</h3>";
 							}
-
-
 						?>
 					</div>
 				</div>
