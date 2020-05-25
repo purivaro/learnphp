@@ -14,7 +14,6 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
@@ -79,13 +78,13 @@
 										</div>
 										<div class="col-md-6 col-lg bg-danger text-white">
 											<div class="text-center p-4">
-												<h2>4</h2>
+												<h2>17</h2>
 												<p>Episodes</p>
 											</div>
 										</div>
 										<div class="col-md-6 col-lg bg-warning text-white">
 											<div class="text-center p-4">
-												<h2>30</h2>
+												<h2>39</h2>
 												<p>Countries</p>
 											</div>
 										</div>
