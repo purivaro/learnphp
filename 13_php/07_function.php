@@ -15,35 +15,41 @@
 					<div class="card-body">
 						<?php
 							$w = 5;
+							$l = 10;
+							$a = cal_area($w, $l);
+							show_area($w, $l, $a);
+
+							$w = 8;
 							$l = 20;
 							$a = cal_area($w, $l);
-							
-							echo "<h2>กว้าง {$w} วา ยาว {$l} วา</h2>";
-							echo "<h1 class='text-info'>คิดเป็น {$a} ตารางวา</h1>";
+							show_area($w, $l, $a);
 
-							$w = 7;
-							$l = 12;
+							$w = 9;
+							$l = 11;
 							$a = cal_area($w, $l);
-							
-							echo "<h2>กว้าง {$w} วา ยาว {$l} วา</h2>";
-							echo "<h1 class='text-info'>คิดเป็น {$a} ตารางวา</h1>";
+							show_area($w, $l, $a);
 
-							$w = 70;
-							$h = 178;
-							$b = cal_bmi($w, $h);
-							$f = cal_fat($b);
+							$weight = 75;
+							$height = 173;
+							$bmi = cal_bmi($weight, $height);
+							$result = cal_fat($bmi);
+							show_fat($weight, $height, $bmi, $result);
 
-							echo "<h2 class='mt-5'>ฉันหนัก {$w} กก. และสูง {$h} ซม.</h2>";
-							echo "<h1>ค่า BMI คือ {$b}</h1>";
-							echo "<h1 class='text-danger'>ฉัน{$f}</h1>";
+
+							$weight = 60;
+							$height = 178;
+							$bmi = cal_bmi($weight, $height);
+							$result = cal_fat($bmi);
+							show_fat($weight, $height, $bmi, $result);
 						?>
-						<table class="table mt-5">
+
+						<table class="table">
 							<thead>
 								<tr>
 									<th>#</th>
 									<th>ชื่อ</th>
 									<th>น้ำหนัก</th>
-									<th>ส่วนสูง</th>
+									<th>สูง</th>
 									<th>BMI</th>
 									<th>ผลลัพท์</th>
 								</tr>
@@ -51,17 +57,16 @@
 							<tbody>
 								<?php
 									$members = [
-										["name"=>"วุฒิ", "weight"=>65, "height"=>170],
-										["name"=>"ไก่", "weight"=>46, "height"=>168],
-										["name"=>"มิน", "weight"=>40, "height"=>156],
+										["name"=>"วุฒิ", "weight"=>70, "height"=>170],
+										["name"=>"ไก่", "weight"=>62, "height"=>168],
+										["name"=>"มิน", "weight"=>60, "height"=>156],
 										["name"=>"กาน", "weight"=>55, "height"=>160],
-										["name"=>"แป้ง", "weight"=>47, "height"=>165],
 									];
 									$n = 0;
 									foreach($members as $member) {
 										$n++;
-										$bmi = cal_bmi($member["weight"], $member["height"]);
-										$res = cal_fat($bmi);
+										$bmi = cal_bmi($member['weight'], $member['height']);
+										$result = cal_fat($bmi);
 										echo "
 											<tr>
 												<td>{$n}</td>
@@ -69,8 +74,8 @@
 												<td>{$member['weight']}</td>
 												<td>{$member['height']}</td>
 												<td>{$bmi}</td>
-												<td>{$res}</td>
-											</tr>
+												<td>{$result}</td>
+											</tr>										
 										";
 									}
 								?>
@@ -85,28 +90,38 @@
 </html>
 <?php
 	function cal_area($width, $length) {
-			$area = $width*$length;
-			return $area;
+		$area = $width*$length;
+		return $area;
+	}
+
+	function show_area($width, $length, $area) {
+		echo "<h2>กว้าง {$width} วา ยาว {$length} วา</h2>";
+		echo "<h1 class='mb-5'>เท่ากับพื้นที่ {$area} ตารางวา</h1>";
 	}
 
 	function cal_bmi($weight, $height) {
-		$height = $height/100; // cm to m
-		$bmi = $weight / ($height * $height);
+		$height = $height/100;
+		$bmi = $weight/($height*$height);
 		return $bmi;
 	}
 
 	function cal_fat($bmi) {
-		if($bmi < 18.5) {
-			$result = "น้ำหนักน้อย / ผอม";
-		} else if($bmi < 23) {
-			$result = "ปกติ (สุขภาพดี)";
-		} else if($bmi < 25) {
-			$result = "ท้วม / โรคอ้วนระดับ 1";
-		} else if($bmi < 30) {
-			$result = "อ้วน / โรคอ้วนระดับ 2";
+		if($bmi >= 30) {
+			$result = "อ้วนมาก";
+		} else if($bmi >= 25) {
+			$result = "อ้วน";
+		} else if($bmi >= 23) {
+			$result = "น้ำหนักเกิน";
+		} else if($bmi >= 18.5) {
+			$result = "น้ำหนักปกติ เหมาะสม";
 		} else {
-			$result = "อ้วนมาก / โรคอ้วนระดับ 3";
+			$result = "ผอมเกินไป";
 		}
 		return $result;
+	}
+
+	function show_fat($weight, $height, $bmi, $result) {
+		echo "<h2 class='mb-2'>น้ำหนัก {$weight} กก. สูง {$height} ซม. ได้ค่า BMI เป็น {$bmi}</h2>";
+		echo "<h1 class='mb-5'>คุณ{$result}</h1>";
 	}
 ?>
