@@ -1,3 +1,5 @@
+<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/class/healthy.class.php"; ?>
+<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/class/dietary.class.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +17,17 @@
 						<h4 class="card-header bg-primary text-white">PHP OOP</h4>
 						<div class="card-body">
 							<?php
-								class Healthy {
-									public $height;
-									public $weight;
-
-									public function bmi() {
-										$h = $this->height/100;
-										$bmi = $this->weight/($h*$h);
-										return $bmi;
-									}
-
-									public function fat() {
-										$bmi = $this->bmi();
-										if($bmi >= 30) {
-											$result = "อ้วนมาก";
-										} else if($bmi >= 25) {
-											$result = "อ้วน";
-										} else if($bmi >= 23) {
-											$result = "น้ำหนักเกิน";
-										} else if($bmi >= 18.5) {
-											$result = "น้ำหนักปกติ เหมาะสม";
-										} else {
-											$result = "ผอมเกินไป";
-										}
-										return $result;
-									}
-								}
-								$jane = new Healthy();
-								$jane->height = 173;
-								$jane->weight = 52;
-								$noon = new Healthy();
-								$noon->height = 165;
-								$noon->weight = 55;
+								$jane = new Healthy(173, 52);
+								// $jane->height = 173;
+								// $jane->weight = 52;
+								$noon = new Healthy(165);
+								// $noon->height = 165;
+								// $noon->weight = 55;
+								$bow = new Dietary(164, 66);
+								$bow->nickname = "โบว์";
+								$bow->setAge(5);
+								$bow->gender = "f";
+			
 								echo "
 									<p>
 										เจน มีความสูง {$jane->height} cm. น้ำหนัก {$jane->weight} กก.
@@ -60,6 +41,16 @@
 										ค่า BMI คือ {$noon->bmi()}
 										ผลลัพท์ คือ {$noon->fat()}
 									</p>
+								";
+								echo "
+									<p>
+										{$bow->nickname} อายุ {$bow->getAge()} ปี มีความสูง {$bow->height} cm. น้ำหนัก {$bow->weight} กก.
+										ค่า BMI คือ {$bow->bmi()}
+										ผลลัพท์ คือ {$bow->fat()}
+										BMR คือ {$bow->bmr()}
+										TDEE คือ {$bow->tdee(3)}
+										Height : {$bow->showHeight()}
+									</p>									
 								";
 							?>
 						</div>
