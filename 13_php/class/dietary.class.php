@@ -1,5 +1,5 @@
 <?php
-
+// เช็คค่า bmr , tdee
 class Dietary extends Healthy {
 	public $nickname;
 	private $age;
@@ -12,12 +12,12 @@ class Dietary extends Healthy {
 		$this->age = $age;
 	}
 
-	public function showHeight() {
-		return $this->getHeight();
-	}
-
 	public function getAge() {
 		return $this->age;
+	}
+
+	public function getWeight() {
+		return $this->weight;
 	}
 
 	public function bmr() {

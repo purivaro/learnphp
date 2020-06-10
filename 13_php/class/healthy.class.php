@@ -1,16 +1,12 @@
 <?php
-
+// เช็คค่า bmi , ความอ้วน
 class Healthy {
 	public $height;
-	public $weight;
+	protected $weight;
 
 	function __construct($h=0, $w=0) {
 		$this->height = $h;
 		$this->weight = $w;
-	}
-
-	protected function getHeight() {
-		return $this->height;
 	}
 
 	public function bmi() {

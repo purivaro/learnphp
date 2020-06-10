@@ -1,5 +1,5 @@
-<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/class/healthy.class.php"; ?>
-<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/class/dietary.class.php"; ?>
+<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/13_php/class/healthy.class.php";?>
+<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/13_php/class/dietary.class.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,26 +30,26 @@
 			
 								echo "
 									<p>
-										เจน มีความสูง {$jane->height} cm. น้ำหนัก {$jane->weight} กก.
+										เจน มีความสูง {$jane->height} cm. 
 										ค่า BMI คือ {$jane->bmi()}
 										ผลลัพท์ คือ {$jane->fat()}
 									</p>
 								";
 								echo "
 									<p>
-										นุ่น มีความสูง {$noon->height} cm. น้ำหนัก {$noon->weight} กก.
+										นุ่น มีความสูง {$noon->height} cm.  
 										ค่า BMI คือ {$noon->bmi()}
 										ผลลัพท์ คือ {$noon->fat()}
 									</p>
 								";
 								echo "
 									<p>
-										{$bow->nickname} อายุ {$bow->getAge()} ปี มีความสูง {$bow->height} cm. น้ำหนัก {$bow->weight} กก.
+										{$bow->nickname} อายุ {$bow->getAge()} ปี มีความสูง {$bow->height} cm. 
+										น้ำหนัก {$bow->getWeight()}
 										ค่า BMI คือ {$bow->bmi()}
 										ผลลัพท์ คือ {$bow->fat()}
 										BMR คือ {$bow->bmr()}
 										TDEE คือ {$bow->tdee(3)}
-										Height : {$bow->showHeight()}
 									</p>									
 								";
 							?>
