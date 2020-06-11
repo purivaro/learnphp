@@ -1,11 +1,21 @@
 <?php
+namespace Health;
+
 // เช็คค่า bmi , ความอ้วน
 class Healthy {
 	public $height;
 	protected $weight;
 
+	// const จะไม่สามารถเปลี่ยนแปลงค่าได้อีก
+	const MAX_WEIGHT = 200;
+	// static จะเป็นตัวแปรของ Class
+	public static $greetings = "รู้ตัวไหม? คุณ";
+
 	function __construct($h=0, $w=0) {
 		$this->height = $h;
+		if($w > self::MAX_WEIGHT){
+			throw new Exception("กรุณาอย่าใส่น้ำหนักเกิน 200");
+		}
 		$this->weight = $w;
 	}
 
@@ -28,7 +38,7 @@ class Healthy {
 		} else {
 			$result = "ผอมเกินไป";
 		}
-		return $result;
+		return self::$greetings.$result;
 	}
 }
 ?>

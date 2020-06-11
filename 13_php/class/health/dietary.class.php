@@ -1,9 +1,34 @@
 <?php
+namespace Health;
+
+// trait คือ Class เสริม แบบที่สามารถเรียกเข้ามาเติมบ้านได้เลยทันที ซึ่งจะมีกี่อันก็ได้ โดยใช้คำสั่ง use 
+trait Quote {
+
+	public static function cheers() {
+		echo "<h2>ขยันมากๆเลย พยายามเข้านะ</h2>";
+	}									
+
+	public function bye() {
+		echo "<h2>แล้วเจอกันคลิปหน้า อย่าลืมกดไลค์ กดแชร์ กดติดตาม(Subscribe) นะ</h2>";
+	}									
+	
+}
+
 // เช็คค่า bmr , tdee
 class Dietary extends Healthy {
+
+	use Quote;
+
 	public $nickname;
 	private $age;
 	public $gender;
+
+	function __construct($h, $w, $nickname=null, $age=null, $gender="m") {
+		$this->nickname = $nickname;
+		$this->age = $age;
+		$this->gender = $gender;
+		parent::__construct($h, $w);
+	}
 
 	public function setAge($age) {
 		if($age <= 0){
@@ -57,7 +82,7 @@ class Dietary extends Healthy {
 		}
 		
 		return $tdee;
-	}									
-	
+	}
+
 }
 ?>

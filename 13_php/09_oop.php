@@ -1,5 +1,4 @@
-<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/13_php/class/healthy.class.php";?>
-<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/13_php/class/dietary.class.php";?>
+<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/13_php/inc/autoload.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +16,19 @@
 						<h4 class="card-header bg-primary text-white">PHP OOP</h4>
 						<div class="card-body">
 							<?php
+								use Health\Healthy;
+								use Health\Dietary;
+								
 								$jane = new Healthy(173, 52);
 								// $jane->height = 173;
 								// $jane->weight = 52;
 								$noon = new Healthy(165);
 								// $noon->height = 165;
 								// $noon->weight = 55;
-								$bow = new Dietary(164, 66);
-								$bow->nickname = "โบว์";
-								$bow->setAge(5);
-								$bow->gender = "f";
+								$bow = new Dietary(164, 66, "โบว์", 25, "f");
+								// $bow->nickname = "โบว์";
+								// $bow->setAge(5);
+								// $bow->gender = "f";
 			
 								echo "
 									<p>
@@ -52,6 +54,17 @@
 										TDEE คือ {$bow->tdee(3)}
 									</p>									
 								";
+
+								echo "<h2>น้ำหนักสูงสุด ไม่เกิน ";								
+								echo Healthy::MAX_WEIGHT;
+								echo "</h2>";
+
+								echo "<h2>";
+								echo Healthy::$greetings;
+								echo "</h2>";
+								
+								Dietary::cheers();
+								$bow->bye();
 							?>
 						</div>
 					</div>
