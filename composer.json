@@ -1,0 +1,17 @@
+{
+    "name": "purivaro/learnphp",
+    "authors": [
+        {
+            "name": "Purivaro",
+            "email": "aun.puri@gmail.com"
+        }
+    ],
+    "require": {
+        "claviska/simpleimage": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

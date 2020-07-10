@@ -1,7 +1,7 @@
 <?php
-namespace Model;
+namespace App\Model;
 
-use Database\Db;
+use App\Database\Db;
 
 class Person extends Db {
 	public function getAllPersons() {

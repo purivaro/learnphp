@@ -1,4 +1,4 @@
-<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/13_php/inc/autoload.php";?>
+<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/vendor/autoload.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +22,7 @@
 							<button type="submit" class="btn btn-primary">Search</button>
 						</form>
 							<?php
-								use Model\Person;
+								use App\Model\Person;
 								$personObj = new Person();
 
 								echo "<h2>Get All Persons</h2>";
