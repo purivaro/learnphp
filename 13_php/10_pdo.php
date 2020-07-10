@@ -1,4 +1,4 @@
-<?php require $_SERVER["DOCUMENT_ROOT"]."/learnphp/vendor/autoload.php";?>
+<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/vendor/autoload.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +14,42 @@
 				<div class="card mb-3">
 					<h4 class="card-header bg-primary text-white">PHP PDO</h4>
 					<div class="card-body">
-							<?php
-								use App\Model\Person;
-								$personObj = new Person();
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Firstname</th>
+									<th>Nickname</th>
+									<th>DOB</th>
+									<th>Gender</th>
+									<th>Club</th>
+									<th>Salary</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+									use App\Model\Person;
 
-								echo "<h2>Get All Persons</h2>";
-								$persons = $personObj->getAllPersons();
-								foreach($persons as $person) {
-									echo "<p>{$person['id']} {$person['firstname']} {$person['nickname']}</p>";
-								}
-							?>
+									$personObj = new Person();
+									$persons = $personObj->getAllPersons();
+									$n=0;
+									foreach($persons as $person) {
+										$n++;
+										echo "
+											<tr>
+												<td>{$n}</td>
+												<td>{$person['firstname']}</td>
+												<td>{$person['nickname']}</td>
+												<td>{$person['dob']}</td>
+												<td>{$person['gender']}</td>
+												<td>{$person['club']}</td>
+												<td>{$person['salary']}</td>
+											</tr>
+										";
+									}
+								?>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
