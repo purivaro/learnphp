@@ -38,6 +38,7 @@ class Person extends Db {
 				persons.nickname,
 				persons.dob,
 				persons.salary,
+				persons.avatar,
 				refs.title AS gender,
 				clubs.title AS club
 			FROM 
@@ -65,6 +66,7 @@ class Person extends Db {
 				dob, 
 				gender_id, 
 				club_id, 
+				avatar, 
 				salary
 			) VALUES (
 				:firstname, 
@@ -72,6 +74,7 @@ class Person extends Db {
 				:dob, 
 				:gender_id, 
 				:club_id, 
+				:avatar, 
 				:salary
 			)
 		";
@@ -88,6 +91,7 @@ class Person extends Db {
 				dob = :dob,
 				gender_id = :gender_id, 
 				club_id = :club_id, 
+				avatar = :avatar, 
 				salary = :salary
 			WHERE id = :id
 		";
@@ -114,6 +118,7 @@ class Person extends Db {
 				persons.dob,
 				persons.salary,
 				persons.gender_id,
+				persons.avatar,
 				persons.club_id
 			FROM 
 				persons

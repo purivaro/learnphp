@@ -11,6 +11,11 @@ use App\Model\Club;
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ระบบข้อมูลสมาชิก</title>
 	<link rel="stylesheet" href="/learnphp/theme/css/bootstrap-theme.css">
+	<style>
+		.avatar {
+			height: 100px;
+		}
+	</style>
 </head>
 <body class="font-mali">
 	<div class="container">
@@ -71,6 +76,7 @@ use App\Model\Club;
 							<thead>
 								<tr>
 									<th>#</th>
+									<th>Avatar</th>
 									<th>Firstname</th>
 									<th>Nickname</th>
 									<th>DOB</th>
@@ -93,6 +99,7 @@ use App\Model\Club;
 										echo "
 											<tr>
 												<td>{$n}</td>
+												<td><img src='{$person['avatar']}' class='avatar'></td>
 												<td>{$person['firstname']}</td>
 												<td>{$person['nickname']}</td>
 												<td>{$person['dob']}</td>

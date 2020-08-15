@@ -27,7 +27,7 @@ if($_REQUEST['action']=='edit') {
 						<a href="index.php" class="btn btn-light">ย้อนกลับ</a>
 					</div>
 					<div class="card-body">
-						<form action="save.php" method="post">
+						<form action="save.php" method="post" enctype="multipart/form-data">
 							<input type="hidden" name="action" value="<?php echo ($_REQUEST['action']=='edit') ? "edit" : "add";?>">
 							<input type="hidden" name="id" value="<?php echo $person['id']; ?>">
 							<div class="form-group">
@@ -77,6 +77,11 @@ if($_REQUEST['action']=='edit') {
 							<div class="form-group">
 								<label for="salary">เงินเดือน</label>
 								<input type="text" name="salary" id="salary" class="form-control" value="<?php echo $person['salary']; ?>">
+							</div>
+							<div class="form-group">
+								<label for="upload">รูปภาพ</label>
+								<input type="file" name="upload" id="upload" class="form-control">
+								<input type="hidden" name="avatar" id="upload" class="form-control" value="<?php echo $person['avatar']; ?>">
 							</div>
 							<button class="btn btn-success" type="submit">บันทึก</button>
 						</form>
