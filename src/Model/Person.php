@@ -5,7 +5,32 @@ use App\Database\Db;
 
 class Person extends Db {
 
-	public function getAllPersons() {
+	public function getAllPersons($filters=[]) {
+
+		$where = "";
+
+		if($filters['search']) {
+			$where .= " AND ( 
+				persons.firstname LIKE :search 
+				OR persons.nickname LIKE :search
+			) ";
+			$filters['search'] = "%{$filters['search']}%";
+		}else{
+			unset($filters['search']);
+		}
+
+		if($filters['gender_id']) {
+			$where .= " AND persons.gender_id = :gender_id ";
+		}else{
+			unset($filters['gender_id']);
+		}
+
+		if($filters['club_id']) {
+			$where .= " AND persons.club_id = :club_id ";
+		}else{
+			unset($filters['club_id']);
+		}
+
 		$sql = "
 			SELECT
 				persons.id,
@@ -19,11 +44,15 @@ class Person extends Db {
 				persons
 				LEFT JOIN refs ON persons.gender_id = refs.id
 				LEFT JOIN clubs ON persons.club_id = clubs.id
+			WHERE
+				persons.id > 0
+				{$where}
 			ORDER BY
 				persons.gender_id,
 				persons.dob
 		";
-		$stmt = $this->pdo->query($sql);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->execute($filters);
 		$data = $stmt->fetchAll();
 		return $data;
 	}

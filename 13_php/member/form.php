@@ -27,7 +27,7 @@ if($_REQUEST['action']=='edit') {
 						<a href="index.php" class="btn btn-light">ย้อนกลับ</a>
 					</div>
 					<div class="card-body">
-						<form action="save.php" method="get">
+						<form action="save.php" method="post">
 							<input type="hidden" name="action" value="<?php echo ($_REQUEST['action']=='edit') ? "edit" : "add";?>">
 							<input type="hidden" name="id" value="<?php echo $person['id']; ?>">
 							<div class="form-group">
