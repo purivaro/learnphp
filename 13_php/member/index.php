@@ -84,7 +84,9 @@ use App\Model\Club;
 								<?php
 
 									$personObj = new Person();
-									$persons = $personObj->getAllPersons($_REQUEST);
+
+									$filters = array_intersect_key($_REQUEST, array_flip(['search', 'gender_id', 'club_id']));
+									$persons = $personObj->getAllPersons($filters);
 									$n=0;
 									foreach($persons as $person) {
 										$n++;
