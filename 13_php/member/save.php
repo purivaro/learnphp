@@ -1,3 +1,4 @@
+<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/auth/auth.php";?>
 <?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/vendor/autoload.php";?>
 <?php
 // $_GET , $_REQUEST
@@ -10,7 +11,7 @@ $personObj = new Person;
 // 
 if($_FILES['upload']['tmp_name']) {
 	$ext = end(explode(".", $_FILES['upload']['name'])); 
-	$avatar = "/learnphp/13_php/member/avartars/" . md5(uniqid()) . ".{$ext}";
+	$avatar = "/learnphp/13_php/member/avatars/" . md5(uniqid()) . ".{$ext}";
 	move_uploaded_file($_FILES['upload']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$avatar);
 }
 

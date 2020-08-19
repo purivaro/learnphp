@@ -1,3 +1,4 @@
+<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/auth/auth.php";?>
 <?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/vendor/autoload.php";?>
 <?php
 use App\Model\Person;
@@ -18,6 +19,7 @@ if($_REQUEST['action']=='edit') {
 	<link rel="stylesheet" href="/learnphp/theme/css/bootstrap-theme.css">
 </head>
 <body class="font-mali">
+	<?php require $_SERVER['DOCUMENT_ROOT']."/learnphp/13_php/inc/components/navbar.php";?>
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col">
@@ -81,7 +83,7 @@ if($_REQUEST['action']=='edit') {
 							<div class="form-group">
 								<label for="upload">รูปภาพ</label>
 								<input type="file" name="upload" id="upload" class="form-control">
-								<input type="hidden" name="avatar" id="upload" class="form-control" value="<?php echo $person['avatar']; ?>">
+								<input type="hidden" name="avatar" id="avatar" class="form-control" value="<?php echo $person['avatar']; ?>">
 							</div>
 							<button class="btn btn-success" type="submit">บันทึก</button>
 						</form>
@@ -90,5 +92,8 @@ if($_REQUEST['action']=='edit') {
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>	
 </body>
 </html>
